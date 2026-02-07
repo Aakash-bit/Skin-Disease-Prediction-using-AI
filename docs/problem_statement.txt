@@ -1,0 +1,2 @@
+Problem Statement:
+Early diagnosis of skin diseases is essential for effective treatment; however, access to dermatologists is limited, especially in rural and underserved regions. Manual diagnosis is time-consuming and subjective. There is a need for an AI-assisted system that can provide preliminary skin disease screening, improve accessibility to dermatological care, and support early medical intervention.

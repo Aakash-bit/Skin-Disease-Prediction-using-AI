@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+.env/
+
+# Database
+*.db
+
+# Model weights (if large)
+*.h5
+*.keras
+*.pt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Data files
+data/*.json
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Tele-Dermatology Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ✅ NAVBAR -->
+<div class="navbar">
+
+    <div class="logo">
+        🏥 AI Tele-Dermatology
+    </div>
+
+    <div class="profile-menu">
+        <img src="../profileicon.png" alt="Profile"
+             class="profile-icon"
+             onclick="toggleMenu()">
+
+        <div id="dropdown" class="dropdown">
+            <a href="profile.html">👤 My Profile</a>
+            <a href="login.html">🚪 Logout</a>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ✅ MAIN CONTAINER -->
+<div class="container">
+
+    <h1>AI Tele-Dermatology Assistant</h1>
+    <p class="subtitle">Upload a skin image for AI-assisted screening</p>
+
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Analyze Image</button>
+
+    <div class="image-compare">
+        <div>
+            <h4>Original Image</h4>
+            <div id="imagePreview" class="image-preview"></div>
+        </div>
+
+        <div>
+            <h4>Grad-CAM Heatmap</h4>
+            <div id="gradcamPreview" class="image-preview"></div>
+        </div>
+    </div>
+
+    <div id="result" class="result-card"></div>
+
+    <!-- ✅ REMOVE disabled FOR TESTING -->
+    <button id="chatButton" class="chat-btn" onclick="toggleChat()">
+        Open Medical Assistant
+    </button>
+
+</div>
+
+
+<!-- ✅ CHAT POPUP (MOST IMPORTANT PART) -->
+<div id="chatPopup" class="chat-popup">
+
+    <div class="chat-header">
+        Virtual Medical Assistant
+        <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
+    </div>
+
+    <div id="chatBox" class="chat-box"></div>
+
+    <div class="chat-input">
+        <input id="chatInput" placeholder="Ask about precautions or appointment">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+
+<!-- ✅ NAVBAR SCRIPT -->
+<script>
+function toggleMenu(){
+    document.getElementById("dropdown").classList.toggle("show");
+}
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

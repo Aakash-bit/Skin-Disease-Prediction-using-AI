@@ -1,0 +1,29 @@
+[
+    {
+        "doctor": "Dr. Singh",
+        "hospital": "Health First Hospital",
+        "disease": "Eczema",
+        "time": "11:30 AM",
+        "date": "2026-02-02",
+        "booked_at": "2026-02-02 21:26",
+        "booked_by": "Aakash"
+    },
+    {
+        "doctor": "Dr. Anjali",
+        "hospital": "Skin Care Clinic",
+        "disease": "Eczema",
+        "time": "11:30 AM",
+        "date": "2026-02-06",
+        "booked_at": "2026-02-06 17:53",
+        "booked_by": "Axiaevangelin"
+    },
+    {
+        "doctor": "Dr. Anjali",
+        "hospital": "Skin Care Clinic",
+        "disease": "Eczema",
+        "time": "04:00 PM",
+        "date": "2026-02-06",
+        "booked_at": "2026-02-06 17:53",
+        "booked_by": "Vinodha"
+    }
+]

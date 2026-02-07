@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+
+<style>
+body{
+    font-family:Segoe UI;
+    background:linear-gradient(135deg,#2a5298,#6dd5ed);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:white;
+    width:420px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#2a5298;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    margin:auto;
+}
+
+.info{
+    margin:8px 0;
+    font-size:15px;
+}
+
+button{
+    margin-top:25px;
+    padding:12px;
+    width:100%;
+    background:#d32f2f;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="avatar" class="avatar"><img src="../profileicon.png" alt="Profile"></div>
+
+<h2 id="fullName">Loading...</h2>
+
+<div class="info">Username: <span id="uname"></span></div>
+<div class="info">Email: <span id="email"></span></div>
+<div class="info">Role: <span id="role"></span></div>
+<div class="info">Phone: <span id="phone"></span></div>
+<div class="info">Family Doctor: <span id="doctor"></span></div>
+<div class="info">User ID: <span id="uid"></span></div>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+if(!localStorage.getItem("username")){
+    alert("Login first");
+    window.location.href="login.html";
+}
+
+loadProfile();
+
+async function loadProfile(){
+
+    const res = await fetch("http://127.0.0.1:8000/me",{
+        headers:{
+            "username": localStorage.getItem("username")
+        }
+    });
+
+    const d = await res.json();
+    console.log(d);
+
+    fullName.innerText = d.full_name;
+    uname.innerText = d.username;
+    email.innerText = d.email;
+    role.innerText = d.role;
+    phone.innerText = d.phone;
+    doctor.innerText = d.family_doctor;
+    uid.innerText = d.id;
+
+    avatar.innerText = d.full_name[0];
+}
+
+function logout(){
+    localStorage.clear();
+    window.location.href="login.html";
+}
+
+</script>
+
+</body>
+</html>
